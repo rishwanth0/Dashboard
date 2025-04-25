@@ -20,23 +20,27 @@ const data = [
 
 ]
 
-const VisitorChart=()=>{
-    return(
-        <div className="bg-white p-4 rounded-lg shadow-md">
-            <h2 className="text-lg font-semibold text-gray-700 mb-4">Visitor Statistics</h2>
+const VisitorChart = () => {
+    return (
+      <div className="bg-white p-4 rounded-lg shadow-md">
+        <h2 className="text-lg font-semibold text-gray-700 mb-4">Visitor Statistics</h2>
+        <div className="w-full overflow-x-auto">
+          <div className="min-w-[300px]">
             <ResponsiveContainer width="100%" height={300}>
-                <LineChart data={data}>
-                    <CartesianGrid strokeDasharray="3 3"/>
-                    <XAxis dataKey="name"/>
-                    <YAxis domain={[0,100]}/>
-                    <Tooltip/>
-                    <Legend/>
-                    <Line type="monotone"dataKey="last6Months" stroke="#6b46c1" name="Last 6 Months"/>
-                    <Line type="monotone" dataKey="previous" stroke="#38a169" name="Previous"/>
-                </LineChart>
+              <LineChart data={data} margin={{ top: 5, right: 20, left: 0, bottom: 5 }} >
+                <CartesianGrid strokeDasharray="3 3"/>
+                <XAxis dataKey="name" tick={{ fontSize: 12 }} tickMargin={10} />
+                <YAxis domain={[0, 100]} tick={{ fontSize: 12 }} tickMargin={10}/>
+                <Tooltip labelFormatter={(label) => `Month: ${label}`}/>
+                <Legend />
+                <Line type="monotone" dataKey="last6Months" stroke="#6b46c1" strokeWidth={2} name="Last 6 Months" dot={{ r: 4 }} activeDot={{ r: 6 }}/>
+                <Line type="monotone" dataKey="previous" stroke="#38a169" strokeWidth={2} name="Previous" dot={{ r: 4 }} activeDot={{ r: 6 }} />
+              </LineChart>
             </ResponsiveContainer>
+          </div>
         </div>
-    )
-}
+      </div>
+    );
+  };
 
 export default VisitorChart;

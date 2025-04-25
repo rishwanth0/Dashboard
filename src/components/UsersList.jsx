@@ -2,19 +2,19 @@ import { RxAvatar } from "react-icons/rx";
 
 const users = [
   {
-    name: "Rishwanth S",
+    name: "John ",
     role: "Software Engineer",
     status: "Active",
     statusColor: "text-green-500",
   },
   {
-    name: "Gokul Nath",
+    name: "David",
     role: "Full-stack Developer",
-    status: "Deactivated", // Changed from "Deactivate" for correct terminology
+    status: "Deactivated", 
     statusColor: "text-red-500",
   },
   {
-    name: "Senthil Arasu",
+    name: "Sam",
     role: "Frontend Developer",
     status: "Active",
     statusColor: "text-green-500",
